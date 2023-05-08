@@ -1,3 +1,5 @@
+Fork of [Girtablulu's solt](https://github.com/Girtablulu/solt)
+
 # Solt
 
 Simple bash script file to make my life easier regarding updating packages etc.
