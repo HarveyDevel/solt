@@ -71,14 +71,25 @@ function _update_common_solbuild {
     popd
 }
 
-# Update solbuild and common folders
-function _update_solcom_solbuild {
+# Update infrastructure-tooling
+function _update_infra_solbuild {
     _user_check
-    _show_info "Updating Solbuild and common ..."
+    _show_info "Updating infrastructure-tooling..."
+    pushd $infra_dir
+        git pull
+    popd
+}
+
+# Update solbuild and common folders
+function _update_solcominfra_solbuild {
+    _user_check
+    _show_info "Updating solbuild common and infrastructure-tooling..."
     pushd $common_dir
         git pull
     popd
-    exec sudo solbuild up
-    _show_confirm "Solbuild and Common updated"
+    pushd $infra_dir
+        git pull
+    popd
+    sudo solbuild up
+    _show_confirm "solbuild common and infrastructure-tooling updated"
 }
-

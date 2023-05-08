@@ -82,9 +82,12 @@ case "$1" in
     solbuild-update | sup )
         if [[ $2 == "--common" ]] || [[ $2 == "--co" ]] ; then
             _update_common_solbuild
-        
+
+        elif [[ $2 == "--infra" ]]; then
+            _update_infra_solbuild
+
         elif [[ $2 == "--all" ]]; then
-            _update_solcom_solbuild
+            _update_solcominfra_solbuild
         
         elif [[ $2 == "help" ]] || [[ $2 == "-h" ]] || [[ $2 == "?" ]] ; then
             _show_help_solbuild_update
