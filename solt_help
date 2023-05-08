@@ -51,7 +51,7 @@ function _show_help_solbuild_update {
     _bold " # solbuild-update "
     echo "    --common        (--co) : Updates only the common folders inside the packaging folder"
     echo "    --infra                : Updates only the infrastructure-tooling folders inside the packaging folder"
-    echo "    --all                  : Updates Solbuild and common folders"
+    echo "    --all                  : Updates solbuild, common and infrastructure-toolin folders"
     echo ""
 }
 
