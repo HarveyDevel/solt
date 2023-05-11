@@ -73,23 +73,31 @@ function _update_common_solbuild {
 
 # Update infrastructure-tooling
 function _update_infra_solbuild {
-    _user_check
-    _show_info "Updating infrastructure-tooling..."
-    pushd $infra_dir
-        git pull
-    popd
+    if [[ $solusteam = "Y" ]]
+    then
+        _user_check
+        _show_info "Updating infrastructure-tooling..."
+        pushd $infra_dir
+            git pull
+        popd
+    else
+        _show_info "Only Solus team members have access to infrastructure-tooling. Skipping..."
+    fi
 }
 
-# Update solbuild and common folders
+# Update solbuild, common and infrastructure-tooling
 function _update_solcominfra_solbuild {
     _user_check
     _show_info "Updating solbuild common and infrastructure-tooling..."
     pushd $common_dir
         git pull
     popd
-    pushd $infra_dir
-        git pull
-    popd
+    if [[ $solusteam == Y ]]
+    then
+        pushd $infra_dir
+            git pull
+        popd
+    fi
     sudo solbuild up
-    _show_confirm "solbuild common and infrastructure-tooling updated"
+    _show_confirm "Tooling updated."
 }
