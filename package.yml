@@ -1,8 +1,8 @@
 name       : solt
-version    : 0.1.1
-release    : 2
+version    : 0.1.2
+release    : 3
 source     :
-    - git|https://github.com/Girtablulu/solt.git : v0.1.1
+    - git|https://github.com/HarveyDevel/solt.git : v0.1.2
 license    : MIT
 component  : programming.tools
 summary    : simple helper bash script for packager
