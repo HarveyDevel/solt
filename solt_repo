@@ -22,7 +22,6 @@ function _create_repo {
         git init;
         _create_makefile
         _show_confirm "Makefile created"
-    _exec_shell
 }
 
 # Update a repo
@@ -34,7 +33,6 @@ function _update_repo {
         _show_request "Please enter new version no and url"
         read VERSION URL
             python $yupdate_path ${VERSION} ${URL}
-    _exec_shell
 }
 
 # Clone a repo
@@ -43,7 +41,6 @@ function _clone_repo {
     cd $build_dir
     make $reponame.clone
     cd $reponame
-    _exec_shell
 }
 
 # Clone and bump a repo
@@ -53,7 +50,6 @@ function _bump_repo {
     make $reponame.clone
     cd $reponame
         make bump
-    _exec_shell
 }
 
 # Clone a Diff for a repo
@@ -63,7 +59,6 @@ function _diff_repo {
     make $reponame.clone
     cd $reponame
         arc patch $diff
-    _exec_shell
 }
 
 # Clone an initial diff
@@ -74,5 +69,4 @@ function _initial_repo {
         git init
         git commit -s -m "Test repo" --allow-empty
         arc patch $diff
-    _exec_shell
 }
