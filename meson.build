@@ -1,7 +1,7 @@
 project(
     'solt',
     ['c'],
-    version: '0.1',
+    version: '0.1.2',
     license: [
         'MIT',
     ],
