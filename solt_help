@@ -14,7 +14,7 @@ function _show_help_base {
     echo ""
     echo " Where <Command> is one of the following orders could be"
     echo ""
-    echo "           pkgconf (pkg) - Search for package from a pkgconfig()"
+    echo "           pkgconf (pkg) - Search for upto 8 packages from a pkgconfig()"
     echo "               repo (re) - To work with the Solus phabricator repo"
     echo "           solbuild (sb) - To work within the Solbuild directory"
     echo "   solbuild-update (sup) - Updates Solbuild"
