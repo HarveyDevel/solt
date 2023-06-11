@@ -86,13 +86,13 @@ function _update_infra_solbuild {
 }
 
 # Update solbuild, common and infrastructure-tooling
-function _update_solcominfra_solbuild {
+function _update_all_solbuild {
     _user_check
     _show_info "Updating solbuild common and infrastructure-tooling..."
     pushd $common_dir
         git pull
     popd
-    if [[ $solusteam == Y ]]
+    if [[ $solusteam == "Y" ]]
     then
         pushd $infra_dir
             git pull

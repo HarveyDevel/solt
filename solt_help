@@ -60,6 +60,7 @@ function _show_help_source {
     _bold " # source-search"
     echo "   - usage of search       : solt source-search <NAME> <FILE>"
     echo "    --less           (--l) : Adding this flag after source-search will only show the file not the results to have a smaller output"
+    echo "    --last-modified (--lm) : Lists SolusSource packages updated in the last 7 days by default. Accepts any number of days as an arg"
     echo "    --up                   : Update the SourceRepo"
     echo "    --clean-repo           : Removes old packages from the Source repo"
     echo ""

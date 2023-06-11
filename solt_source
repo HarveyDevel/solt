@@ -6,14 +6,14 @@ if [ -f "/etc/solt/solt.conf" ]; then
 fi
 
 # Update common folder
-function _update_solus_source_common {
+function _update_source_common {
     pushd $phabsource_dir/common
         git pull
     popd
 }
 
-# Update solussource Folder
-function _update_solus_source {
+# Update SolusSource Folder
+function _update_source {
     _user_check
     pushd $phabsource_dir
         make clone -j20
@@ -24,20 +24,29 @@ function _update_solus_source {
 }
 
 # Search inside SolusSource folder
-function _search_solus_source {
+function _search_source {
     pushd $phabsource_dir
         ag --silent -QH $term ./*/$place
     popd
 }
 
-function _search_solus_source2 {
+# Less verbose search of SolusSource folder
+function _search_source_less {
     pushd $phabsource_dir
        ag --silent -Ql $term ./*/$place
     popd
 }
-function _remove_solus_source_pkg {
+
+# Remove deprecated packages
+function _remove_source_pkg {
     pushd $phabsource_dir
         go run common/Go/deprecate_packages.go
     popd
 }
     
+# Get SolusSource repos modified in the last x days
+function _source_last_modified {
+    pushd $phabsource_dir
+        ./common/Scripts/repos-modified-since-days.sh $days
+    popd
+}
