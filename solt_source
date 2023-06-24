@@ -16,9 +16,9 @@ function _update_source_common {
 function _update_source {
     _user_check
     pushd $phabsource_dir
-        make clone -j20
+        make clone -j$clone_jobs
         _show_info "Repo updated"
-        make pull -j20
+        make pull -j$clone_jobs
         _show_info "Packages updated"
     popd
 }
